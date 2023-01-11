@@ -34,7 +34,7 @@ public class CarService {
         car = CarEntity.builder()
                 .name(carDto.getName())
                 .brand(carDto.getName())
-                .year(carDto.getYear())
+                .productionYear(carDto.getYear())
                 .description(carDto.getDescription())
                 .sold(carDto.getSold())
                 .build();
@@ -49,7 +49,7 @@ public class CarService {
         car.get().setName(carDto.getName());
         car.get().setBrand(carDto.getBrand());
         car.get().setDescription(carDto.getDescription());
-        car.get().setYear(carDto.getYear());
+        car.get().setProductionYear(carDto.getYear());
         car.get().setSold(carDto.getSold());
 
         carRepository.save(carEntityBuilder(car.get(), carDto));
@@ -71,7 +71,7 @@ public class CarService {
 
         if(carDto.getName() != null) car.get().setName(carDto.getName());
         if(carDto.getBrand() != null)car.get().setBrand(carDto.getBrand());
-        if(carDto.getYear() != 0)car.get().setYear(carDto.getYear());
+        if(carDto.getYear() != 0)car.get().setProductionYear(carDto.getYear());
         if(carDto.getDescription() != null)car.get().setDescription(carDto.getDescription());
         if(carDto.getSold() != null)car.get().setSold(carDto.getSold());
 
@@ -90,7 +90,7 @@ public class CarService {
         int startYear = getStarDate(year);
         int endYear = getEndDate(year);
 
-        List<CarEntity> cars = carRepository.findAllByYearLessThanEqualAndYearGreaterThanEqual(endYear, startYear);
+        List<CarEntity> cars = carRepository.findAllByProductionYearLessThanEqualAndProductionYearGreaterThanEqual(endYear, startYear);
 
         return cars.stream().map(CarDto::of).collect(Collectors.toList());
     }

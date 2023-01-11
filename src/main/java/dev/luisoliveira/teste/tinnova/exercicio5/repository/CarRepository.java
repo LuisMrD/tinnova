@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CarRepository extends JpaRepository<CarEntity, Long> {
 
-    List<CarEntity> findAllByYearLessThanEqualAndYearGreaterThanEqual(int endDate, int startDate);
+    List<CarEntity> findAllByProductionYearLessThanEqualAndProductionYearGreaterThanEqual(int endDate, int startDate);
 
     List<CarEntity> findAllByCreatedAtLessThanEqualAndCreatedAtGreaterThanEqual(LocalDateTime endDate, LocalDateTime startDate);
 

@@ -25,7 +25,7 @@ public class CarEntity {
 
     private String brand;
 
-    private int year;
+    private int productionYear;
 
     private String description;
 

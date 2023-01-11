@@ -11,7 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
-@ActiveProfiles("test")
+@ActiveProfiles("application-test")
 public class CarRepositoryTest {
 
     @Autowired
@@ -24,7 +24,7 @@ public class CarRepositoryTest {
         CarEntity car = CarEntity.builder()
                 .name("carro")
                 .brand("FORD")
-                .year(1988)
+                .productionYear(1988)
                 .description("Carro veloz")
                 .sold(false)
                 .build();

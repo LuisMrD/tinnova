@@ -31,7 +31,7 @@ public class CarDto {
         carDto.setId(carEntity.getId());
         carDto.setName(carEntity.getName());
         carDto.setBrand(carEntity.getBrand());
-        carDto.setYear(carEntity.getYear());
+        carDto.setYear(carEntity.getProductionYear());
         carDto.setDescription(carEntity.getDescription());
         carDto.setSold(carEntity.getSold());
         carDto.setCreatedAt(carEntity.getCreatedAt());
