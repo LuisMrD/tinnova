@@ -33,7 +33,7 @@ public class CarService {
     private CarEntity carEntityBuilder(CarEntity car, CarDto carDto) {
         car = CarEntity.builder()
                 .name(carDto.getName())
-                .brand(carDto.getName())
+                .brand(carDto.getName().toUpperCase())
                 .productionYear(carDto.getYear())
                 .description(carDto.getDescription())
                 .sold(carDto.getSold())
@@ -47,7 +47,7 @@ public class CarService {
         verifyIfSomeFieldIsNull(id, carDto, car);
 
         car.get().setName(carDto.getName());
-        car.get().setBrand(carDto.getBrand());
+        car.get().setBrand(carDto.getBrand().toUpperCase());
         car.get().setDescription(carDto.getDescription());
         car.get().setProductionYear(carDto.getYear());
         car.get().setSold(carDto.getSold());
@@ -70,7 +70,7 @@ public class CarService {
         if(car.isEmpty()) throw new ResourceNotFoundException("Car", "id", id);
 
         if(carDto.getName() != null) car.get().setName(carDto.getName());
-        if(carDto.getBrand() != null)car.get().setBrand(carDto.getBrand());
+        if(carDto.getBrand() != null)car.get().setBrand(carDto.getBrand().toUpperCase());
         if(carDto.getYear() != 0)car.get().setProductionYear(carDto.getYear());
         if(carDto.getDescription() != null)car.get().setDescription(carDto.getDescription());
         if(carDto.getSold() != null)car.get().setSold(carDto.getSold());
