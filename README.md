@@ -10,6 +10,12 @@ O exercício 5 pode ser executado através da classe principal da aplicação Sp
 
 A aplicação Spring foi desenvolvida usando o jdk 17.0.1, portanto é recomendável ter essa versão instalada na máquinda onde for rodar o projeto.
 
+COMO CONFIGURAR O PROJETO
+
+É preciso ajustar o arquivo application.properties para refletir nome e senha, do banco local em MySql na máquina onde for rodar o projeto.
+
+É preciso executar o seguinte comando no banco de dados local antes de iniciar a aplicação: CREATE DATABASE teste_tinnova;
+
 
 
 
