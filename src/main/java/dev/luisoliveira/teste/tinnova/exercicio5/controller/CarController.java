@@ -20,9 +20,16 @@ public class CarController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void createCar(@Valid @RequestBody CarDto carDto) {
+    public void createCar(@Valid @RequestBody CarDto carDto){
         carService.createCar(carDto);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<CarDto> findAllCars(){
+        return carService.getAllcars();
+    }
+
 
     @PutMapping
     @RequestMapping("atualizar/{id}")
@@ -62,14 +69,14 @@ public class CarController {
     @GetMapping
     @RequestMapping("/naovendidos")
     @ResponseStatus(HttpStatus.OK)
-    public List<CarDto> getAllCarsNotSold() {
+    public List<CarDto> getAllCarsNotSold(){
         return carService.findAllCarsNotSold();
     }
 
     @GetMapping
     @RequestMapping("/ultimasemana")
     @ResponseStatus(HttpStatus.OK)
-    public List<CarDto> getAllCarsCreatedOnLastWeek() {
+    public List<CarDto> getAllCarsCreatedOnLastWeek(){
         return carService.findAllByCreatedAtLastWeek();
     }
 }

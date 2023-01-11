@@ -22,15 +22,23 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public void createCar(CarDto carDto) {
-        CarEntity car = new CarEntity();
-        car.setName(carDto.getName());
-        car.setBrand(carDto.getBrand());
-        car.setYear(carDto.getYear());
-        car.setDescription(carDto.getDescription());
-        car.setSold(carDto.getSold());
+    public List<CarDto> getAllcars(){
+        return carRepository.findAll().stream().map(CarDto::of).collect(Collectors.toList());
+    }
 
-        carRepository.save(car);
+    public void createCar(CarDto carDto) {
+        carRepository.save(carEntityBuilder(new CarEntity(), carDto));
+    }
+
+    private CarEntity carEntityBuilder(CarEntity car, CarDto carDto) {
+        car = CarEntity.builder()
+                .name(carDto.getName())
+                .brand(carDto.getName())
+                .year(carDto.getYear())
+                .description(carDto.getDescription())
+                .sold(carDto.getSold())
+                .build();
+        return car;
     }
 
     public void updateCarAllFields(long id, CarDto carDto){
@@ -40,11 +48,11 @@ public class CarService {
 
         car.get().setName(carDto.getName());
         car.get().setBrand(carDto.getBrand());
-        car.get().setYear(carDto.getYear());
         car.get().setDescription(carDto.getDescription());
+        car.get().setYear(carDto.getYear());
         car.get().setSold(carDto.getSold());
 
-        carRepository.save(car.get());
+        carRepository.save(carEntityBuilder(car.get(), carDto));
     }
 
     private void verifyIfSomeFieldIsNull(long id, CarDto carDto, Optional<CarEntity> car) {
