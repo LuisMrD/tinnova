@@ -33,7 +33,7 @@ public class CarService {
     private CarEntity carEntityBuilder(CarEntity car, CarDto carDto) {
         car = CarEntity.builder()
                 .name(carDto.getName())
-                .brand(carDto.getName().toUpperCase())
+                .brand(carDto.getBrand().toUpperCase())
                 .productionYear(carDto.getYear())
                 .description(carDto.getDescription())
                 .sold(carDto.getSold())

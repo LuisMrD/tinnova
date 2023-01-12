@@ -2,11 +2,16 @@ package dev.luisoliveira.teste.tinnova.exercicio5.dto;
 
 import dev.luisoliveira.teste.tinnova.exercicio5.entity.CarEntity;
 import dev.luisoliveira.teste.tinnova.exercicio5.utils.CarBrandValidation;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class CarDto {
 
     private long id;
