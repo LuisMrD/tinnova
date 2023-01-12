@@ -15,7 +15,7 @@ Escrevi alguns teste, porém, para executálos é preciso alterar o arquivo appl
 #spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect  -> descomentar essa linha
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect -> comentar essa linha
 
-Não escrevi o front end da aplicação, mas enviei por email uma coleção do Postman para bater em cada endpoint.
+Não escrevi o front end da aplicação, mas adicionei na raiz desse projeto uma coleção do Postman para bater em cada endpoint.
 
 COMO CONFIGURAR O PROJETO
 
@@ -24,6 +24,6 @@ COMO CONFIGURAR O PROJETO
 É preciso executar o seguinte comando no banco de dados local (MysSql) antes de iniciar a aplicação: CREATE DATABASE teste_tinnova;
 
 
-
+*Lista com as marcas de carros que são aceitas, pode ser encontrada em: exercicio5/utils/CarBrands (ENUM)
 
 
