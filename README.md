@@ -10,11 +10,18 @@ O exercício 5 pode ser executado através da classe principal da aplicação Sp
 
 A aplicação Spring foi desenvolvida usando o jdk 17.0.1, portanto é recomendável ter essa versão instalada na máquinda onde for rodar o projeto.
 
+Escrevi alguns teste, porém, para executálos é preciso alterar o arquivo application.properties da seguinte maneira:
+
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect  -> descomentar essa linha
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect -> comentar essa linha
+
+Não escrevi o front end da aplicação, mas enviei por email uma coleção do Postman para bater em cada endpoint.
+
 COMO CONFIGURAR O PROJETO
 
 É preciso ajustar o arquivo application.properties para refletir nome e senha, do banco local em MySql na máquina onde for rodar o projeto.
 
-É preciso executar o seguinte comando no banco de dados local antes de iniciar a aplicação: CREATE DATABASE teste_tinnova;
+É preciso executar o seguinte comando no banco de dados local (MysSql) antes de iniciar a aplicação: CREATE DATABASE teste_tinnova;
 
 
 
