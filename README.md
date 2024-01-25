@@ -10,7 +10,7 @@ O exercício 5 pode ser executado através da classe principal da aplicação Sp
 
 A aplicação Spring foi desenvolvida usando o jdk 17.0.1, portanto é recomendável ter essa versão instalada na máquinda onde for rodar o projeto.
 
-Escrevi alguns teste, porém, para executálos é preciso alterar o arquivo application.properties da seguinte maneira:
+Escrevi alguns testes, porém, para executálos é preciso alterar o arquivo application.properties da seguinte maneira:
 
 #spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect  -> descomentar essa linha
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect -> comentar essa linha
